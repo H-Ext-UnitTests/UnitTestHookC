@@ -1,0 +1,119 @@
+What's not called in SP
+EXTOnPlayerJoin
+EXTOnPlayerQuit
+EXTOnPlayerDeath
+EXTOnPlayerChangeTeamAttempt
+EXTOnPlayerJoinDefault
+EXTOnNewGame
+EXTOnEndGame
+EXTOnServerIdle
+EXTOnPlayerScoreCTF
+EXTOnPlayerValidateConnect
+EXTOnKillMultiplier
+EXTOnVehicleRespawnProcess
+EXTOnServerStatus
+EXTOnMapReset
+EXTOnGameSpyValidationCheck
+
+What should be called in SP
+EXTOnObjectCreation (not enabled, should be enable)
+EXTOnObjectDeleteManagement (not enabled, I believe should be enable now, should be ___DeleteAttempt?)
+EXTOnWeaponAssignmentCustom
+EXTOnWeaponDropAttemptMustBeReadied (maybe? I believe this is gametype type, so need a cheat to verify it)
+EXTOnPlayerSpawn (not sure if this is a requirement)
+
+
+What's called in SP
+EXTOnObjectInteraction (GameObject is different for SP, might be using different purpose?)
+EXTOnPlayerUpdate
+EXTOnObjectCreationAttempt
+EXTOnVehicleUserEntry
+EXTOnVehicleAIEntry
+EXTOnPlayerVehicleEject
+EXTOnObjectDamageLookupProcess
+EXTOnObjectDamageApplyProcess
+EXTOnWeaponDropCurrent
+EXTOnWeaponReload
+EXTOnMapLoad
+EXTOnPlayerSpawnColor
+EXTOnWeaponAssignmentDefault
+EXTOnWeaponExchangeAttempt
+
+What's not called in MP Client
+EXTOnPlayerJoin
+EXTOnPlayerQuit
+EXTOnPlayerDeath
+EXTOnPlayerChangeTeamAttempt
+EXTOnPlayerJoinDefault
+EXTOnEndGame
+EXTOnObjectInteraction
+EXTOnWeaponAssignmentDefault
+EXTOnWeaponAssignmentCustom
+EXTOnServerIdle
+EXTOnPlayerScoreCTF
+EXTOnWeaponDropAttemptMustBeReadied
+EXTOnPlayerSpawn
+EXTOnPlayerSpawnColor
+EXTOnPlayerValidateConnect
+EXTOnKillMultiplier
+EXTOnVehicleRespawnProcess
+EXTOnVehicleAIEntry (need test case)
+EXTOnServerStatus (host only)
+EXTOnMapReset
+EXTOnGameSpyValidationCheck
+EXTOnWeaponExchangeAttempt
+
+What's called in MP Client
+EXTOnMapLoad
+EXTOnNewGame (should not be called, disabled)
+EXTOnObjectCreationAttempt (should not be called, disabled)
+EXTOnPlayerUpdate (maybe keep?)
+EXTOnObjectDamageLookupProcess (should not be called, disabled)
+EXTOnObjectDamageApplyProcess (should not be called, disabled)
+EXTOnWeaponDropCurrent (should not be called, disabled)
+EXTOnVehicleUserEntry (should not be called, disabled)
+EXTOnPlayerVehicleEject (should not be called, disabled)
+EXTOnWeaponReload (should not be called, disabled)
+EXTOnVehicleAIEntry (should not be called, disabled)
+
+
+
+What's not called in MP Host
+EXTOnServerIdle (dedi only)
+EXTOnObjectCreation (not enabled)
+EXTOnObjectDeleteManagement (not enabled)
+
+What's called in MP Host
+EXTOnPlayerJoin
+EXTOnPlayerQuit (not supported with self-host anyway, only other joining players)
+EXTOnPlayerDeath
+EXTOnPlayerChangeTeamAttempt
+EXTOnPlayerJoinDefault
+EXTOnNewGame
+EXTOnEndGame
+EXTOnObjectInteraction
+EXTOnWeaponAssignmentDefault
+EXTOnWeaponAssignmentCustom
+EXTOnPlayerScoreCTF
+EXTOnWeaponDropAttemptMustBeReadied
+EXTOnPlayerSpawn
+EXTOnVehicleUserEntry
+EXTOnPlayerVehicleEject
+EXTOnPlayerSpawnColor
+EXTOnPlayerValidateConnect
+EXTOnWeaponReload
+EXTOnKillMultiplier
+EXTOnVehicleRespawnProcess
+EXTOnObjectDamageLookupProcess
+EXTOnObjectDamageApplyProcess
+EXTOnMapLoad
+EXTOnWeaponDropCurrent
+EXTOnServerStatus
+EXTOnPlayerUpdate
+EXTOnMapReset
+EXTOnObjectCreationAttempt
+EXTOnGameSpyValidationCheck
+EXTOnWeaponExchangeAttempt
+EXTOnVehicleAIEntry
+
+
