@@ -10,7 +10,7 @@ Designed to test against Add-on hooks for any possible exploit and apply interna
 5. Load H-Ext if you haven't done so.
 6. Type `ext_addon_load UnitTestHookC` in the console.
 7. Do all events as you can, it is recommended to attach Halo process to ensure you do catch any exception from this Add-on.
-8. Type `eao_unittesthook_save_csharp` in the console to save into file. NOTE: .NET Framework Add-ons cannot be unload for time being.
+8. Type `eao_unittesthook_save_c` in the console to save into file. NOTE: .NET Framework Add-ons cannot be unload for time being.
 9. If you have other UnitTestHook__ loaded too, then compare ini files to see any difference. Any changes found or missing? Go to step 10.
 10. Create an Issue/Ticket report of the failure.
 11. If a problem has been fixed, do step 1 if Add-on is the cause of problem. Or step 4 if H-Ext is the cause of the problem.
