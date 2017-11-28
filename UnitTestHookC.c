@@ -183,7 +183,7 @@ const wchar_t nullStr[] = L"NULL";
 
 dllAPI void WINAPIC EXTOnPlayerJoin(PlayerInfo plI) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerJoin < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerJoin++;
@@ -197,7 +197,7 @@ dllAPI void WINAPIC EXTOnPlayerJoin(PlayerInfo plI) {
 
 dllAPI void WINAPIC EXTOnPlayerQuit(PlayerInfo plI) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerQuit < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerQuit++;
@@ -211,7 +211,7 @@ dllAPI void WINAPIC EXTOnPlayerQuit(PlayerInfo plI) {
 
 dllAPI void WINAPIC EXTOnPlayerDeath(PlayerInfo killer, PlayerInfo victim, int mode, bool* showMessage) {
     VARIANT vars[4];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerDeath < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerDeath++;
@@ -227,7 +227,7 @@ dllAPI void WINAPIC EXTOnPlayerDeath(PlayerInfo killer, PlayerInfo victim, int m
 
 dllAPI bool WINAPIC EXTOnPlayerChangeTeamAttempt(PlayerInfo plI, e_color_team_index team, bool forceChange) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerChangeTeamAttempt < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerChangeTeamAttempt++;
@@ -243,7 +243,7 @@ dllAPI bool WINAPIC EXTOnPlayerChangeTeamAttempt(PlayerInfo plI, e_color_team_in
 
 dllAPI e_color_team_index WINAPIC EXTOnPlayerJoinDefault(s_machine_slot* mS, e_color_team_index cur_team) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerJoinDefault < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerJoinDefault++;
@@ -260,7 +260,7 @@ dllAPI e_color_team_index WINAPIC EXTOnPlayerJoinDefault(s_machine_slot* mS, e_c
 __declspec(deprecated("Do not use EXTOnNewGame hook, use EXTOnMapLoad hook instead."))
 dllAPI void WINAPIC EXTOnNewGame(wchar_t* map) {
     VARIANT vars[1];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnNewGame < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnNewGame++;
@@ -273,7 +273,7 @@ dllAPI void WINAPIC EXTOnNewGame(wchar_t* map) {
 
 dllAPI void WINAPIC EXTOnEndGame(int mode) {
     VARIANT vars[1];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnEndGame < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnEndGame++;
@@ -287,7 +287,7 @@ dllAPI void WINAPIC EXTOnEndGame(int mode) {
 
 dllAPI bool WINAPIC EXTOnObjectInteraction(PlayerInfo plI, s_ident obj_id, s_object* objectStruct, hTagHeader* hTag) {
     VARIANT vars[5];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectInteraction < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectInteraction++;
@@ -305,7 +305,7 @@ dllAPI bool WINAPIC EXTOnObjectInteraction(PlayerInfo plI, s_ident obj_id, s_obj
 
 dllAPI void WINAPIC EXTOnWeaponAssignmentDefault(PlayerInfo plI, s_ident owner_obj_id, s_tag_reference* cur_weap_id, unsigned int order, s_ident* new_weap_id) {
     VARIANT vars[5];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponAssignmentDefault < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponAssignmentDefault++;
@@ -322,7 +322,7 @@ dllAPI void WINAPIC EXTOnWeaponAssignmentDefault(PlayerInfo plI, s_ident owner_o
 
 dllAPI void WINAPIC EXTOnWeaponAssignmentCustom(PlayerInfo plI, s_ident owner_obj_id, s_ident cur_weap_id, unsigned int order, s_ident* new_weap_id) {
     VARIANT vars[5];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponAssignmentCustom < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponAssignmentCustom++;
@@ -348,7 +348,7 @@ dllAPI void WINAPIC EXTOnServerIdle() {
 
 dllAPI bool WINAPIC EXTOnPlayerScoreCTF(PlayerInfo plI, s_ident cur_weap_id, unsigned int team, bool isGameObject) {
     VARIANT vars[4];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerScoreCTF < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerScoreCTF++;
@@ -365,7 +365,7 @@ dllAPI bool WINAPIC EXTOnPlayerScoreCTF(PlayerInfo plI, s_ident cur_weap_id, uns
 
 dllAPI bool WINAPIC EXTOnWeaponDropAttemptMustBeReadied(PlayerInfo plI, s_ident owner_obj_id, s_biped* pl_Biped) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponDropAttemptMustBeReadied < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponDropAttemptMustBeReadied++;
@@ -382,7 +382,7 @@ dllAPI bool WINAPIC EXTOnWeaponDropAttemptMustBeReadied(PlayerInfo plI, s_ident 
 
 dllAPI void WINAPIC EXTOnPlayerSpawn(PlayerInfo plI, s_ident obj_id, s_biped* pl_Biped) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerSpawn < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerSpawn++;
@@ -397,7 +397,7 @@ dllAPI void WINAPIC EXTOnPlayerSpawn(PlayerInfo plI, s_ident obj_id, s_biped* pl
 
 dllAPI bool WINAPIC EXTOnPlayerVehicleEntry(PlayerInfo plI, bool forceEntry) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerVehicleEntry < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerVehicleEntry++;
@@ -412,7 +412,7 @@ dllAPI bool WINAPIC EXTOnPlayerVehicleEntry(PlayerInfo plI, bool forceEntry) {
 
 dllAPI bool WINAPIC EXTOnPlayerVehicleEject(PlayerInfo plI, bool forceEject) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerVehicleEject < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerVehicleEject++;
@@ -427,7 +427,7 @@ dllAPI bool WINAPIC EXTOnPlayerVehicleEject(PlayerInfo plI, bool forceEject) {
 
 dllAPI bool WINAPIC EXTOnPlayerSpawnColor(PlayerInfo plI, bool isTeamPlay) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerSpawnColor < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerSpawnColor++;
@@ -443,7 +443,7 @@ dllAPI bool WINAPIC EXTOnPlayerSpawnColor(PlayerInfo plI, bool isTeamPlay) {
 
 dllAPI PLAYER_VALIDATE WINAPIC EXTOnPlayerValidateConnect(PlayerExtended plEx, s_machine_slot mS, s_ban_check banCheckPlayer, bool isBanned, toggle svPass, PLAYER_VALIDATE isForceReject) {
     VARIANT vars[6];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     char banCheckPlayerHashA[33] = { 0 };
     static wchar_t index[8] = { 0 };
     int indexLength;
@@ -473,7 +473,7 @@ dllAPI PLAYER_VALIDATE WINAPIC EXTOnPlayerValidateConnect(PlayerExtended plEx, s
 
 dllAPI bool WINAPIC EXTOnWeaponReload(s_object* obj_Struct, bool allowReload) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponReload < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponReload++;
@@ -489,7 +489,7 @@ dllAPI bool WINAPIC EXTOnWeaponReload(s_object* obj_Struct, bool allowReload) {
 // Enabled in 0.5.3.4
 dllAPI void WINAPIC EXTOnObjectCreate(s_ident obj_id, s_object* obj_Struct, hTagHeader* header) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectCreate < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectCreate++;
@@ -503,7 +503,7 @@ dllAPI void WINAPIC EXTOnObjectCreate(s_ident obj_id, s_object* obj_Struct, hTag
 
 dllAPI void WINAPIC EXTOnKillMultiplier(PlayerInfo killer, unsigned int multiplier) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnKillMultiplier < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnKillMultiplier++;
@@ -515,9 +515,9 @@ dllAPI void WINAPIC EXTOnKillMultiplier(PlayerInfo killer, unsigned int multipli
     }
 }
 
-dllAPI bool WINAPIC EXTOnVehicleRespawnProcess(s_ident obj_id, s_object* cur_object, objManaged* managedObj, bool isManaged) {
-    VARIANT vars[5];
-    wchar_t output[128];
+dllAPI VEHICLE_RESPAWN WINAPIC EXTOnVehicleRespawnProcess(s_ident obj_id, s_object* cur_object, objManaged* managedObj) {
+    VARIANT vars[4];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnVehicleRespawnProcess < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnVehicleRespawnProcess++;
@@ -526,17 +526,16 @@ dllAPI bool WINAPIC EXTOnVehicleRespawnProcess(s_ident obj_id, s_object* cur_obj
         VARIANTfloat(&vars[1], managedObj->world.x);
         VARIANTfloat(&vars[2], managedObj->world.y);
         VARIANTfloat(&vars[3], managedObj->world.z);
-        VARIANTbool(&vars[4], isManaged);
-        pIUtil->m_formatVariantW(output, 128, L"ModelTag: {0:08X}, World X: {1:f}, Y: {2:f}, Z: {3:f}, isManaged: {4:d}", 5, vars);
+        pIUtil->m_formatVariantW(output, 128, L"ModelTag: {0:08X}, World X: {1:f}, Y: {2:f}, Z: {3:f}", 5, vars);
         CALL_MEMBER_FN(pICIniFile, m_value_set, HookNames[21], index, output);
     }
-    return 1; //If set to false, it is managed by you. True for default.
+    return VEHICLE_RESPAWN_DEFAULT; //Look in VEHICLE_RESPAWN enum for available options to return.
 }
 
 // Enabled in 0.5.3.4
-dllAPI bool WINAPIC EXTOnObjectDeleteAttempt(s_ident obj_id, s_object* cur_object, int curTicks, bool isManaged) {
+dllAPI OBJECT_ATTEMPT WINAPIC EXTOnObjectDeleteAttempt(s_ident obj_id, s_object* cur_object, int curTicks, bool isManaged) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectDeleteAttempt < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectDeleteAttempt++;
@@ -547,12 +546,12 @@ dllAPI bool WINAPIC EXTOnObjectDeleteAttempt(s_ident obj_id, s_object* cur_objec
         pIUtil->m_formatVariantW(output, 128, L"ModelTag: {0:08X}, Current Ticks: {1:d}, isManaged: {2:d}", 3, vars);
         CALL_MEMBER_FN(pICIniFile, m_value_set, HookNames[22], index, output);
     }
-    return 1; //If set to false, it is managed by you. True for default.
+    return OBJECT_ATTEMPT_DEFAULT; //Look in OBJECT_ATTEMPT enum for available options to return.
 }
 
 dllAPI bool WINAPIC EXTOnObjectDamageLookupProcess(objDamageInfo* damageInfo, s_ident* obj_recv, bool* allowDamage, bool isManaged) {
     VARIANT vars[5];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectDamageLookupProcess < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectDamageLookupProcess++;
@@ -571,7 +570,7 @@ dllAPI bool WINAPIC EXTOnObjectDamageLookupProcess(objDamageInfo* damageInfo, s_
 
 dllAPI bool WINAPIC EXTOnObjectDamageApplyProcess(const objDamageInfo* damageInfo, s_ident* obj_recv, objHitInfo* hitInfo, bool isBacktap, bool* allowDamage, bool isManaged) {
     VARIANT vars[6];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectDamageApplyProcess < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectDamageApplyProcess++;
@@ -592,7 +591,7 @@ dllAPI bool WINAPIC EXTOnObjectDamageApplyProcess(const objDamageInfo* damageInf
 // Changed in 0.5.3.3
 dllAPI void WINAPIC EXTOnMapLoad(s_ident map_tag, const wchar_t* map_name, GAME_MODE game_mode) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnMapLoad < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnMapLoad++;
@@ -607,7 +606,7 @@ dllAPI void WINAPIC EXTOnMapLoad(s_ident map_tag, const wchar_t* map_name, GAME_
 
 dllAPI toggle WINAPIC EXTOnAIVehicleEntry(s_ident bipedTag, s_ident vehicleTag, unsigned short seatNum, toggle isManaged) {
     VARIANT vars[4];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnAIVehicleEntry < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnAIVehicleEntry++;
@@ -625,7 +624,7 @@ dllAPI toggle WINAPIC EXTOnAIVehicleEntry(s_ident bipedTag, s_ident vehicleTag, 
 // Changed in 0.5.3.3
 dllAPI void WINAPIC EXTOnWeaponDropCurrent(PlayerInfo plI, s_ident bipedTag, s_biped* biped, s_ident weaponTag, s_weapon* weapon) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponDropCurrent < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponDropCurrent++;
@@ -639,7 +638,7 @@ dllAPI void WINAPIC EXTOnWeaponDropCurrent(PlayerInfo plI, s_ident bipedTag, s_b
 
 dllAPI toggle WINAPIC EXTOnServerStatus(int execId, toggle isManaged) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnServerStatus < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnServerStatus++;
@@ -655,7 +654,7 @@ dllAPI toggle WINAPIC EXTOnServerStatus(int execId, toggle isManaged) {
 // Featured in 0.5.2.3 and newer
 dllAPI void WINAPIC EXTOnPlayerUpdate(PlayerInfo plI) {
     VARIANT vars[1];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnPlayerUpdate < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnPlayerUpdate++;
@@ -677,9 +676,9 @@ dllAPI void WINAPIC EXTOnMapReset() {
 
 // Featured in 0.5.3.0 and newer
 // Enabled in 0.5.3.4
-dllAPI bool WINAPIC EXTOnObjectCreateAttempt(PlayerInfo plOwner, objCreationInfo object_creation, objCreationInfo* change_object, bool isOverride) {
-    VARIANT vars[6];
-    wchar_t output[128];
+dllAPI OBJECT_ATTEMPT WINAPIC EXTOnObjectCreateAttempt(PlayerInfo plOwner, objCreationInfo object_creation, objCreationInfo* change_object) {
+    VARIANT vars[5];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectCreateAttempt < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectCreateAttempt++;
@@ -689,17 +688,16 @@ dllAPI bool WINAPIC EXTOnObjectCreateAttempt(PlayerInfo plOwner, objCreationInfo
         VARIANTfloat(&vars[2], object_creation.pos.x);
         VARIANTfloat(&vars[3], object_creation.pos.y);
         VARIANTfloat(&vars[4], object_creation.pos.z);
-        VARIANTbool(&vars[5], isOverride);
-        pIUtil->m_formatVariantW(output, 128, L"map_id: {0:08X}, parent_id: {1:08X}, pos.x: {2:f}, pos.y: {3:f}, pos.z: {4:f}, isOverride: {5:d}", 6, vars);
+        pIUtil->m_formatVariantW(output, 128, L"map_id: {0:08X}, parent_id: {1:08X}, pos.x: {2:f}, pos.y: {3:f}, pos.z: {4:f}", 5, vars);
         CALL_MEMBER_FN(pICIniFile, m_value_set, HookNames[31], index, output);
     }
-    return 0; //Set to true will override. False for default.
+    return OBJECT_ATTEMPT_DEFAULT; //Look in OBJECT_ATTEMPT enum for available options to return.
 }
 
 // Featured in 0.5.3.2 and newer
 dllAPI bool WINAPIC EXTOnGameSpyValidationCheck(unsigned int UniqueID, bool isValid, bool forceBypass) {
     VARIANT vars[3];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnGameSpyValidationCheck < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnGameSpyValidationCheck++;
@@ -716,7 +714,7 @@ dllAPI bool WINAPIC EXTOnGameSpyValidationCheck(unsigned int UniqueID, bool isVa
 // Featured in 0.5.3.3 and newer
 dllAPI bool WINAPIC EXTOnWeaponExchangeAttempt(PlayerInfo plOwner, s_ident bipedTag, s_biped* biped, int slot_index, s_ident weaponTag, s_weapon* weapon, bool allowExchange) {
     VARIANT vars[5];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnWeaponExchangeAttempt < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnWeaponExchangeAttempt++;
@@ -735,7 +733,7 @@ dllAPI bool WINAPIC EXTOnWeaponExchangeAttempt(PlayerInfo plOwner, s_ident biped
 // Featured in 0.5.3.4 and newer
 dllAPI void WINAPIC EXTOnObjectDelete(s_ident obj_id, s_object* obj_Struct, hTagHeader* header) {
     VARIANT vars[2];
-    wchar_t output[128];
+    wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
     if (checkHooks.EXTOnObjectDelete < MAX_HOOK_COUNTER) {
         checkHooks.EXTOnObjectDelete++;
