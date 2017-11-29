@@ -533,7 +533,7 @@ dllAPI VEHICLE_RESPAWN WINAPIC EXTOnVehicleRespawnProcess(s_ident obj_id, s_obje
 }
 
 // Enabled in 0.5.3.4
-dllAPI OBJECT_ATTEMPT WINAPIC EXTOnObjectDeleteAttempt(s_ident obj_id, s_object* cur_object, int curTicks, bool isManaged) {
+dllAPI OBJECT_ATTEMPT WINAPIC EXTOnObjectDeleteAttempt(s_ident obj_id, s_object* cur_object, int curTicks) {
     VARIANT vars[3];
     wchar_t output[INIFILEVALUEMAX];
     static wchar_t index[4] = { 0 };
